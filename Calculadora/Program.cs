@@ -24,26 +24,33 @@ namespace Calculadora
                 Console.Write("Digite o segundo valor: ");
                 calc.B = double.Parse(Console.ReadLine());
 
-                switch (opcao)
+                try
                 {
-                    case 1:              
-                        Console.WriteLine("Resultado: {0} + {1} = {2}", calc.A, calc.B, calc.Somar(calc.A, calc.B).ToString("F2"));
-                        break;
+                    switch (opcao)
+                    {
+                        case 1:
+                            Console.WriteLine("Resultado: {0} + {1} = {2}", calc.A, calc.B, calc.Somar(calc.A, calc.B).ToString("F2"));
+                            break;
 
-                    case 2:
-                        Console.WriteLine("Resultado: {0} - {1} = {2}", calc.A, calc.B, calc.Subtrair(calc.A, calc.B).ToString("F2"));
-                        break;
+                        case 2:
+                            Console.WriteLine("Resultado: {0} - {1} = {2}", calc.A, calc.B, calc.Subtrair(calc.A, calc.B).ToString("F2"));
+                            break;
 
-                    case 3:
-                        Console.WriteLine("Resultado: {0} * {1} = {2}", calc.A, calc.B, calc.Multiplicar(calc.A, calc.B).ToString("F2"));
-                        break;
+                        case 3:
+                            Console.WriteLine("Resultado: {0} * {1} = {2}", calc.A, calc.B, calc.Multiplicar(calc.A, calc.B).ToString("F2"));
+                            break;
 
-                    case 4:
-                        Console.WriteLine("Resultado: {0} / {1} = {2}", calc.A, calc.B, calc.Dividir(calc.A, calc.B).ToString("F2"));
-                        break;
+                        case 4:
+                            Console.WriteLine("Resultado: {0} / {1} = {2}", calc.A, calc.B, calc.Dividir(calc.A, calc.B).ToString("F2"));
+                            break;
 
-                    default:
-                        break;
+                        default:
+                            break;
+                    }
+                } 
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
                 }
             }
             else
